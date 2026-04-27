@@ -1,0 +1,57 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.count strong {
+  color: var(--text);
+}
+
+.filters {
+  display: flex;
+  gap: 2px;
+}
+
+.filterBtn {
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: background var(--transition), color var(--transition);
+}
+
+.filterBtn:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.filterBtn.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.clearBtn {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 5px 8px;
+  border-radius: 8px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.clearBtn:hover:not(:disabled) {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.clearBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

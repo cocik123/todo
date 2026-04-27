@@ -1,0 +1,129 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition);
+  animation: slideIn 200ms ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item:hover {
+  background: color-mix(in srgb, var(--accent) 3%, transparent);
+}
+
+.item:hover .actions {
+  opacity: 1;
+}
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition), background var(--transition);
+  color: #fff;
+}
+
+.checkbox:hover {
+  border-color: var(--accent);
+}
+
+.checkbox.checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.checkbox svg {
+  width: 12px;
+  height: 10px;
+}
+
+.text {
+  flex: 1;
+  font-size: 15px;
+  color: var(--text);
+  word-break: break-word;
+  cursor: default;
+  user-select: none;
+  transition: color var(--transition);
+}
+
+.done .text {
+  color: var(--text-done);
+  text-decoration: line-through;
+  text-decoration-color: var(--text-muted);
+}
+
+.editInput {
+  flex: 1;
+  height: 34px;
+  padding: 0 10px;
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity var(--transition);
+  flex-shrink: 0;
+}
+
+.item:focus-within .actions {
+  opacity: 1;
+}
+
+.editBtn,
+.deleteBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition);
+}
+
+.editBtn svg,
+.deleteBtn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.editBtn {
+  color: var(--text-muted);
+}
+
+.editBtn:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.deleteBtn {
+  color: var(--text-muted);
+}
+
+.deleteBtn:hover {
+  background: var(--danger-light);
+  color: var(--danger);
+}
